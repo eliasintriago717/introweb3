@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datos Personales</title>
+</head>
+
+<body>
+
+    <h2>Registro de Datos Personales</h2>
+
+    <form id="datos_personales">
+        <table>
+            <tr>
+                <td>Nombre:</td>
+                <td>
+                    <input id="txtNombre" type="text" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Apellido:</td>
+                <td>
+                    <input id="txtApellido" type="text" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Correo:</td>
+                <td>
+                    <input id="txtcorreo" type="email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Edad:</td>
+                <td>
+                    <input id="txtEdad" type="number" required />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" id="btnRegistar">Registrar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <h3>Persona registrada</h3>
+    
+    <!-- Tabla de resultados colocada abajo -->
+    <table border="1">
+        <tr>
+            <td>Nombre:</td>
+            <td id="resNombre">ninguno</td>
+        </tr>
+        <tr>
+            <td>Apellido:</td>
+            <td id="resApellido">ninguno</td>
+        </tr>
+        <tr>
+            <td>Correo:</td>
+            <td id="resCorreo">ninguno</td>
+        </tr>
+        <tr>
+            <td>Edad:</td>
+            <td id="resEdad">ninguno</td>
+        </tr>
+    </table>
+
+    <script>
+        const form = document.getElementById("datos_personales");
+        
+        let datosGuardados = {
+            nombre: '',
+            apellido: '',
+            correo: '',
+            edad: ''
+        };
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 1. Guardar los datos ingresados
+            datosGuardados.nombre = document.getElementById("txtNombre").value;
+            datosGuardados.apellido = document.getElementById("txtApellido").value;
+            datosGuardados.correo = document.getElementById("txtcorreo").value;
+            datosGuardados.edad = document.getElementById("txtEdad").value;
+
+            // 2. Insertar cada valor en la tabla de abajo
+            document.getElementById("resNombre").innerText = datosGuardados.nombre;
+            document.getElementById("resApellido").innerText = datosGuardados.apellido;
+            document.getElementById("resCorreo").innerText = datosGuardados.correo;
+            document.getElementById("resEdad").innerText = datosGuardados.edad;
+
+            // 3. Limpiar los inputs del formulario
+            form.reset();
+        });
+
+        // 4. Mostrar placeholders al pasar el cursor
+        form.addEventListener('mouseenter', function() {
+            if (datosGuardados.nombre !== '') {
+                document.getElementById("txtNombre").placeholder = datosGuardados.nombre;
+                document.getElementById("txtApellido").placeholder = datosGuardados.apellido;
+                document.getElementById("txtcorreo").placeholder = datosGuardados.correo;
+                document.getElementById("txtEdad").placeholder = datosGuardados.edad;
+            }
+        });
+
+        // 5. Quitar placeholders al retirar el cursor
+        form.addEventListener('mouseleave', function() {
+            document.getElementById("txtNombre").placeholder = "";
+            document.getElementById("txtApellido").placeholder = "";
+            document.getElementById("txtcorreo").placeholder = "";
+            document.getElementById("txtEdad").placeholder = "";
+        });
+    </script>
+
+</body>
+
+</html>

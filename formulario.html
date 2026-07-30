@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>suma</title>
+</head>
+<body>
+
+  <h2>suma</h2>
+
+  <form>
+    <table>
+      <tr>
+        <td>numero1:</td>
+        <td>
+          <input id="txtNum1" type="text"/>
+        </td>
+      </tr>
+      <tr>
+        <td>numero2:</td>
+        <td>
+          <input id="txtNum2" type="text"/>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="button" id="boton_sumar">sumar</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    document.getElementById('boton_sumar').addEventListener('click', function()
+    {
+      // Usamos parseInt() para convertir el texto a números enteros
+      var numero1 = parseInt(document.getElementById("txtNum1").value) || 0;
+      var numero2 = parseInt(document.getElementById("txtNum2").value) || 0;
+      var result = numero1 + numero2;
+      alert("el resultado es: " + result);
+    });
+  </script>
+
+</body>
+</html>

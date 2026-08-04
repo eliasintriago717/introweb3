@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Registro de datos</title>
+    
+    <!-- Fuentes e Íconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <!-- Header / Banner -->
+    <header class="banner-header">
+        <div class="banner-title">
+            <h1>Portal de Registro</h1>
+            <p>Plataforma de Gestión de Personas y Perfiles</p>
+        </div>
+    </header>
+
+    <!-- Navegación Superior -->
+    <!-- Navegación Superior Sincronizada -->
+<nav class="nav-bar">
+    <a href="#" id="top-opcion-a" class="nav-item active" onclick="cambiarSeccion('sec-general', 'opt-general', this)">
+        <i class="fa-solid fa-house"></i> Opción A
+    </a>
+    <a href="#" id="top-opcion-b" class="nav-item" onclick="cambiarSeccion('sec-registro', 'opt-registro', this)">
+        <i class="fa-solid fa-layer-group"></i> Opción B
+    </a>
+    <a href="#" id="top-opcion-c" class="nav-item" onclick="cambiarSeccion('sec-usuarios', 'opt-usuarios', this)">
+        <i class="fa-solid fa-chart-pie"></i> Opción C
+    </a>
+    <a href="#" id="top-opcion-d" class="nav-item" onclick="cambiarSeccion('sec-ajustes', 'opt-ajustes', this)">
+        <i class="fa-solid fa-gear"></i> Opción D
+    </a>
+</nav>
+
+    <!-- Contenido Principal -->
+    <div class="main-container">
+
+        <!-- Menú Lateral Interactivo -->
+        <aside class="sidebar">
+            <div class="sidebar-title">Menú Principal</div>
+            <ul class="menu-list">
+                <li class="menu-item" onclick="cambiarSeccion('sec-general', this)">
+                    <span class="badge-num">1</span>
+                    <span>General</span>
+                </li>
+                <li class="menu-item active" onclick="cambiarSeccion('sec-registro', this)">
+                    <span class="badge-num">2</span>
+                    <span>Registro Form</span>
+                </li>
+               
+                <li class="menu-item" onclick="cambiarSeccion('sec-ajustes', this)">
+                    <span class="badge-num">3</span>
+                    <span>Ajustes</span>
+                </li>
+                 <li class="menu-item" onclick="cambiarSeccion('sec-usuarios', this)">
+                    <span class="badge-num" id="contador-badge">0</span>
+                    <span>Usuarios</span>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Área Central -->
+        <main class="content-area">
+
+            <!-- 1. SECCIÓN GENERAL -->
+            <section id="sec-general" class="card-container tab-content" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> Información General</h2>
+                    <p>Bienvenido al módulo de gestión de usuarios del sistema.</p>
+                </div>
+                <div class="general-body">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Imagen General" class="general-img">
+                    <div class="general-info">
+                        <h3>Plataforma de Control de Asistencia y Registros</h3>
+                        <p>Una plataforma de registro de usuarios 
+                            es un sistema digital que permite a las personas 
+                            crear una cuenta personal, autenticarse y administrar sus datos para acceder de forma segura a servicios y contenidos. Sus funciones principales son la identificación, la gestión de roles y 
+                            la protección de la privacidad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. SECCIÓN REGISTRO -->
+            <section id="sec-registro" class="card-container tab-content">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-user-plus" style="color: var(--primary-color);"></i> Registro de Personas</h2>
+                    <p>Por favor ingrese los datos solicitados para completar la inscripción.</p>
+                </div>
+
+                <form id="Formulario">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="txtNombres">Nombres</label>
+                            <div class="input-wrapper">
+                                <input id="txtNombres" class="form-control" type="text" placeholder="Ej. Juan Andrés" required />
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtApellidos">Apellidos</label>
+                            <div class="input-wrapper">
+                                <input id="txtApellidos" class="form-control" type="text" placeholder="Ej. Pérez Gómez" required />
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCorreo">Correo Electrónico</label>
+                            <div class="input-wrapper">
+                                <input id="txtCorreo" class="form-control" type="email" placeholder="ejemplo@correo.com" required />
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtEdad">Edad</label>
+                            <div class="input-wrapper">
+                                <input id="txtEdad" class="form-control" type="number" placeholder="Ej. 25" min="1" max="120" required />
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+                        </div>
+
+                        <!-- Botones de Acción -->
+                        <div class="button-group">
+                            <button class="btn-submit" type="submit">
+                                <i class="fa-solid fa-paper-plane"></i> Registrar Persona
+                            </button>
+                            <button type="button" class="btn-clear" onclick="limpiarFormulario()">
+                                <i class="fa-solid fa-broom"></i> Limpiar Campos
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 3. SECCIÓN USUARIOS -->
+            <section id="sec-usuarios" class="card-container tab-content" style="display: none;">
+                <div class="section-header-flex">
+                    <div class="section-header">
+                        <h2><i class="fa-solid fa-users" style="color: var(--primary-color);"></i> Usuarios Registrados</h2>
+                        <p>Lista general de personas ingresadas en el sistema.</p>
+                    </div>
+                    <button class="btn-clear-all" onclick="vaciarTodosLosUsuarios()">
+                        <i class="fa-solid fa-trash-can"></i> Vaciar Lista
+                    </button>
+                </div>
+
+                <div id="lista-usuarios-container">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-folder-open"></i>
+                        Aún no hay usuarios registrados. Usa la pestaña 'Registro Form'.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SECCIÓN AJUSTES -->
+            <!-- SECCIÓN AJUSTES MEJORADA -->
+<section id="sec-ajustes" class="card-container tab-content" style="display: none;">
+    <div class="section-header">
+        <h2><i class="fa-solid fa-gear" style="color: var(--primary-color);"></i> Ajustes del Sistema</h2>
+        <p>Configuración general y preferencias de la aplicación.</p>
+    </div>
+
+    <div class="settings-grid">
+        <!-- Tarjeta 1: Preferencias de Apariencia -->
+        <div class="setting-card">
+            <div class="setting-icon"><i class="fa-solid fa-palette"></i></div>
+            <div class="setting-info">
+                <h3>Apariencia del Portal</h3>
+                <p>Personaliza el estilo visual del panel.</p>
+                <div class="setting-controls">
+                    <label class="switch-label">
+                        <span>Modo Oscuro</span>
+                        <input type="checkbox" id="check-theme" checked onchange="toggleTheme()">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Notificaciones / Estado -->
+        <div class="setting-card">
+            <div class="setting-icon"><i class="fa-solid fa-bell"></i></div>
+            <div class="setting-info">
+                <h3>Alertas y Sonidos</h3>
+                <p>Activa confirmaciones visuales al registrar usuarios.</p>
+                <div class="setting-controls">
+                    <label class="switch-label">
+                        <span>Notificaciones de sistema</span>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Gestión de Base de Datos -->
+        <div class="setting-card danger-zone">
+            <div class="setting-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="setting-info">
+                <h3>Gestión de Datos</h3>
+                <p>Opciones avanzadas para respaldar o reiniciar tu sistema.</p>
+                <div class="setting-buttons">
+                    <button class="btn-setting" onclick="exportarDatos()">
+                        <i class="fa-solid fa-download"></i> Exportar Usuarios (JSON)
+                    </button>
+                    <button class="btn-setting btn-danger" onclick="vaciarTodosLosUsuarios()">
+                        <i class="fa-solid fa-trash-can"></i> Reiniciar Sistema
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <!-- Script de Control -->
+   <!-- Script de Control -->
+    <!-- Script de Control -->
+    <script>
+        let usuarios = [];
+
+        // Cambiar sección y actualizar estado activo de ambos menús
+        function cambiarSeccion(idSeccion, idMenuItemSidebar, elementoTopNav) {
+            document.querySelectorAll('.tab-content').forEach(sec => sec.style.display = 'none');
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+
+            const seccion = document.getElementById(idSeccion);
+            if (seccion) seccion.style.display = 'block';
+
+            if (elementoTopNav) elementoTopNav.classList.add('active');
+            if (idMenuItemSidebar) {
+                const elSidebar = typeof idMenuItemSidebar === 'string' ? document.getElementById(idMenuItemSidebar) : idMenuItemSidebar;
+                if (elSidebar) elSidebar.classList.add('active');
+            }
+        }
+
+        function sincronizarDesdeSidebar(idSeccion, idTopNav, elementoSidebar) {
+            const topElement = document.getElementById(idTopNav);
+            cambiarSeccion(idSeccion, elementoSidebar, topElement);
+        }
+
+        function limpiarFormulario() {
+            const form = document.getElementById('Formulario');
+            if (form) form.reset();
+        }
+
+        // Registro de usuarios
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('Formulario');
+            if (formulario) {
+                formulario.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const nuevoUsuario = {
+                        id: Date.now(),
+                        nombres: document.getElementById("txtNombres").value,
+                        apellidos: document.getElementById("txtApellidos").value,
+                        correo: document.getElementById("txtCorreo").value,
+                        edad: document.getElementById("txtEdad").value
+                    };
+
+                    usuarios.push(nuevoUsuario);
+                    renderizarUsuarios();
+                    limpiarFormulario();
+
+                    // Redirigir correctamente a la pestaña Usuarios (Opción C / Pestaña 3)
+                    cambiarSeccion('sec-usuarios', 'opt-usuarios', document.getElementById('top-opcion-c'));
+                });
+            }
+        });
+
+        // Renderizar tabla limpia
+        function renderizarUsuarios() {
+            const contenedor = document.getElementById("lista-usuarios-container");
+            const contadorBadge = document.getElementById("contador-badge");
+            
+            if (contadorBadge) contadorBadge.innerText = usuarios.length;
+            if (!contenedor) return;
+
+            if (usuarios.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p>Aún no hay usuarios registrados. Usa la pestaña 'Registro Form'.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = `
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th>Edad</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            usuarios.forEach(user => {
+                html += `
+                    <tr>
+                        <td>${user.nombres}</td>
+                        <td>${user.apellidos}</td>
+                        <td>${user.correo}</td>
+                        <td>${user.edad} años</td>
+                        <td>
+                            <button class="btn-delete-item" onclick="eliminarUsuario(${user.id})">❌</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += `</tbody></table>`;
+            contenedor.innerHTML = html;
+        }
+
+        function eliminarUsuario(id) {
+            usuarios = usuarios.filter(user => user.id !== id);
+            renderizarUsuarios();
+        }
+
+        function vaciarTodosLosUsuarios() {
+            if (usuarios.length === 0) return;
+            if (confirm("¿Estás seguro de eliminar todos los usuarios registrados?")) {
+                usuarios = [];
+                renderizarUsuarios();
+            }
+        }
+    </script>

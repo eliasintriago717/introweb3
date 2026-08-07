@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Automotriz “El Gordo Paz”</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        /* ESTILOS GENERALES Y RESETS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background-color: #0f172a;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 3px;
+            border-radius: 6px;
+        }
+
+        .logo h1 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo h1 span {
+            color: #f97316;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: #e4e3e3;
+        }
+
+        /* GRID DE TARJETAS ALINEADAS ABAJO (ZONA AMARILLA) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 120px auto 3rem auto; /* 120px de espacio superior para bajar los cuadros */
+            padding: 0 1.5rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .f-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #0f172a;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/tallermeca.jpg" alt="AutoTech Logo" class="logo-img">
+            <h1>Talleer Automotriz<span>“El Gordo Paz”</span></h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<a href="Vehiculo.html">Vehículos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="f-icon">🛠️</div>
+                <h3>Diagnóstico Computarizado</h3>
+                <p>Escaneo electrónico multimarca para detección rápida y certera de fallas de motor y transmisión.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-icon">👨‍🔧</div>
+                <h3>Mecánicos Certificados</h3>
+                <p>Personal altamente capacitado en sistemas de inyección, frenos ABS y electrónica automotriz.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-icon">⚡</div>
+                <h3>Servicio Exprés</h3>
+                <p>Cambio de aceite, alineación, balanceo y revisión de seguridad en tiempo récord.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taller Automotriz “El Gordo Paz” - Sistema de Gestión Escolar. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+<!-- En tu HTML: Envuelve la sección de inicio dentro de un div con la clase 'hero-section' -->
+<main class="hero-section">
+    <div class="container">
+        <!-- Tus tarjetas van aquí dentro -->
+    </div>
+</main>
